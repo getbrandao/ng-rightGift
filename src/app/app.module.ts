@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { SharedModule } from './shared/shared.module';
 
+import { Angular2TokenService } from 'angular2-token';
+
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 
@@ -14,7 +16,7 @@ import { LoginComponent } from './login/login.component';
     BrowserModule,
     SharedModule
   ],
-  providers: [],
+  providers: [Angular2TokenService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
