@@ -22,4 +22,8 @@ describe('LoginComponent', () => {
   it('should be created', () => {
     expect(component).toBeTruthy();
   });
+
+  // it('should render login viewer', () => {
+  //   expect().toBeTruthy();
+  // })
 });
