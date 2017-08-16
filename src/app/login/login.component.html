@@ -1,39 +1,35 @@
- <div class="view-login">
-  <header class="header-login">
-    <h2>LOGO</h2>
-  </header>
-
   <section class="section-login">
-    <form id="login-form" [formGroup]="loginForm" (ngSubmit)="onSignIn()">
+    <div class="login-form">
+      <form id="login-form" [formGroup]="loginForm" (ngSubmit)="onSignIn()">
       
-      <md-input-container class="">
-        <input mdInput placeholder="Email" formControlName="email" type="email">
-         <md-error *ngIf="loginForm.controls.email.hasError('email')">
-          Please enter a valid email address!
-        </md-error>
-        <md-error *ngIf="loginForm.controls.email.hasError('required')">
-          Email is <strong>required</strong>!
-        </md-error> 
-      </md-input-container>
+        <div>
+          <md-input-container class="login-form-input">
+            <input mdInput placeholder="Email" formControlName="email" type="email">
+            <md-error *ngIf="loginForm.controls.email.hasError('email')">
+              Please enter a valid email address!
+            </md-error>
+            <md-error *ngIf="loginForm.controls.email.hasError('required')">
+              Email is <strong>required</strong>!
+            </md-error> 
+          </md-input-container>
+        </div>
 
-      <md-input-container class="">
-        <input mdInput placeholder="Password" formControlName="password" type="password">
-         <md-error *ngIf="loginForm.controls.password.hasError('minlength')">
-          Please password must it be 6 characters! 
-        </md-error>
-        <md-error *ngIf="loginForm.controls.password.hasError('required')">
-          Password is <strong>required</strong>!
-        </md-error> 
-      </md-input-container>
+        <div>
+          <md-input-container class="login-form-input">
+            <input mdInput placeholder="Password" formControlName="password" type="password">
+            <md-error *ngIf="loginForm.controls.password.hasError('minlength')">
+              Please password must it be 6 characters! 
+            </md-error>
+            <md-error *ngIf="loginForm.controls.password.hasError('required')">
+              Password is <strong>required</strong>!
+            </md-error> 
+          </md-input-container>
+        </div>
 
-      <button md-raised-button>Login</button>
+        <div>
+          <button md-raised-button type="submit" [disabled]="!this.loginForm.valid">Login</button>
+        </div>
 
-    </form>
-  </section>
-
-  <footer class="footer-login">
-
-  </footer>
-
-</div>
- 
+      </form>
+    </div>
+  </section> 
