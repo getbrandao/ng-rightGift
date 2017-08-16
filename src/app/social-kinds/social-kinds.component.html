@@ -1,0 +1,13 @@
+<div class="">
+  <md-list>
+    <h3 md-subheader>Social Networks</h3>
+    <md-list-item *ngFor="let socialKind of socialKinds">
+      <md-icon md-list-icon>public</md-icon>
+      <h4 md-line>{{socialKind.attributes.name}}</h4>
+      <p md-line>
+        <a href={{socialKind.links.self}} class="mat-list-details">Details</a>
+      </p>
+
+    </md-list-item>
+  </md-list>
+</div>

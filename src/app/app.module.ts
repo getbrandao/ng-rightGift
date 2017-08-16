@@ -3,18 +3,20 @@ import { NgModule } from '@angular/core';
 
 import { SharedModule } from './shared/shared.module';
 import { LoginModule } from './login/login.module';
+import { SocialKindsModule } from "./social-kinds/social-kinds.module";
 import { AppRoutingModule } from "./app-routing.module";
 
 import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     SharedModule,
     LoginModule,
+    SocialKindsModule,
     AppRoutingModule
   ],
   providers: [],

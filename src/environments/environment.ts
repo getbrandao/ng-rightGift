@@ -6,6 +6,14 @@
 export const environment = {
   production: false,
   token_auth_config: {
-    apiBase: 'http://localhost:3000'
+    apiBase:      'http://localhost:3000',
+      apiPath:      'v1',
+      signInPath:   'auth/sign_in',
+      globalOptions: {
+          headers: {
+              'Content-Type':     'application/vnd.api+json',
+              'Accept':           'application/vnd.api+json'
+          }
+      }
   }
 };

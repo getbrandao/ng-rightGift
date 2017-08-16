@@ -8,7 +8,7 @@ import { EmailValidator } from "../validator/email-validator";
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-   providers: [AuthService]
+  providers: [AuthService]
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
       email: ['', Validators.compose([Validators.required, EmailValidator.validate])],
-      password: ['', Validators.compose([Validators.required, Validators.minLength(5)])]
+      password: ['', Validators.compose([Validators.required, Validators.minLength(6)])]
     });
   }
 
