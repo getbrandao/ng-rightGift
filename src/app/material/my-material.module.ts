@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MdInputModule, MdButtonModule, MdIconModule } from '@angular/material';
-import { MdMenuModule } from '@angular/material';
+import { MdMenuModule, MdDialogModule } from '@angular/material';
 import { MdListModule } from '@angular/material';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -15,10 +15,10 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     MdMenuModule,
     MdListModule,
     NoopAnimationsModule,
-
+    MdDialogModule
   ],
   exports: [MdInputModule, MdButtonModule, MdIconModule, MdMenuModule, MdListModule,
-            NoopAnimationsModule],
+            NoopAnimationsModule, MdDialogModule],
   declarations: []
 })
 export class MyMaterialModule { }
