@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ObjectDataService } from "../service/object-data.service";
+import { ObjectDataService } from '../service/object-data.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+import { Router } from '@angular/router';
+import { Angular2TokenService } from 'angular2-token';
 
 @Component({
   selector: 'app-social-kinds',
@@ -11,15 +14,24 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class SocialKindsComponent implements OnInit {
   socialKinds = [];
 
-  constructor(private formBuilder: FormBuilder, private objectData: ObjectDataService) { }
+  constructor(private formBuilder: FormBuilder,
+              private objectData: ObjectDataService,
+              private _tokenService: Angular2TokenService,
+              private router: Router) { }
 
   ngOnInit() {
-    this.objectData.getSocialKinds('social_kinds').subscribe(
-      data => {  console.log(data.data);
-                 this.socialKinds = data.data;
-              },
-      error =>    console.log(error)
-    );
+    if (this._tokenService.userSignedIn()) {
+      this.objectData.getSocialKinds('social_kinds').subscribe(
+        data => {  console.log(data.data);
+                  this.socialKinds = data.data;
+                },
+        error => {
+                  this.router.navigate(['/login']);
+                 }
+      );
+    } else {
+      this.router.navigate(['/login']);
+    }
   }
 
 }

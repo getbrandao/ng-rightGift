@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
 
 import { SocialKindsRoutingModule } from './social-kinds-routing.module';
-import { SocialKindsComponent } from "./social-kinds.component";
+import { SocialKindsComponent } from './social-kinds.component';
 
 @NgModule({
   imports: [
