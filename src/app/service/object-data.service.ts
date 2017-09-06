@@ -18,9 +18,7 @@ export class ObjectDataService {
     try {
       if (this._tokenService.userSignedIn()) {
         return this._tokenService.get(object)
-          .map((response: Response) => {
-            return <any>response.json();
-          })
+          .map((response: Response) => <any>response.json())
       }
     } catch (err) {
       return err;

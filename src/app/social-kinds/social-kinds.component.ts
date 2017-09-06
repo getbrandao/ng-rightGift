@@ -22,12 +22,8 @@ export class SocialKindsComponent implements OnInit {
   ngOnInit() {
     if (this._tokenService.userSignedIn()) {
       this.objectData.getSocialKinds('social_kinds').subscribe(
-        data => {  console.log(data.data);
-                  this.socialKinds = data.data;
-                },
-        error => {
-                  this.router.navigate(['/login']);
-                 }
+        data =>  { this.socialKinds = data.data; },
+        error => { this.router.navigate(['/login']); }
       );
     } else {
       this.router.navigate(['/login']);
