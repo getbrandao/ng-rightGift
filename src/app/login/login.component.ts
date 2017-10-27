@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../service/auth.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { EmailValidator } from "../validator/email-validator";
+import { EmailValidator } from '../validator/email-validator';
 
 @Component({
   selector: 'app-login',
@@ -22,8 +22,12 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  onSignIn(){
+  onSignIn() {
     this.authService.signIn(this.loginForm.value);
+  }
+
+  onSignSocial() {
+    this.authService.signSocial();
   }
 
 }

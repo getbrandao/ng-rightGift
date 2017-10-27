@@ -5,7 +5,7 @@ import { environment } from '../environments/environment';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
   isUserSignId: Boolean = false;
@@ -14,15 +14,10 @@ export class AppComponent implements OnInit {
     this._tokenService.init(environment.token_auth_config);
   }
 
-  ngOnInit() {
-    this.checkUserSignIn();
-  }
+  ngOnInit() {  }
 
-  checkUserSignIn() {
-    if (this._tokenService.userSignedIn()) {
-      this.isUserSignId = true;
-    }
+  checkSign() {
+    this.isUserSignId = true;
   }
-
 }
 

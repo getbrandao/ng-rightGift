@@ -1,4 +1,4 @@
-import { Injectable, Output, EventEmitter, ViewChild } from '@angular/core';
+import { Injectable, Output, EventEmitter } from '@angular/core';
 import { Angular2TokenService } from 'angular2-token';
 import { environment} from '../../environments/environment';
 import { Observable } from 'rxjs/Rx';
@@ -22,7 +22,7 @@ export class AuthService {
           // console.log('auth response:', res);
           // console.log('auth response headers: ', res.headers.toJSON()); // log the response header to show the auth token
           // console.log('auth response body:', res.json()); // log the response body to show the user
-          this.appcomp.checkUserSignIn();
+        this.appcomp.checkSign();
         },
 
         err => {
@@ -37,6 +37,17 @@ export class AuthService {
           // alert(err.status);
         }
     );
+  }
+
+  signSocial() {
+    this._tokenService.signInOAuth('facebook'); /*.subscribe(
+      res => { console.log(res); },
+      error => console.log(error)
+      );*/
+  }
+
+  afterSocial() {
+    this.appcomp.checkSign();
   }
 
 }

@@ -8,11 +8,13 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { MydialogComponent } from './material/mydialog.component';
+import { OauthCallbackComponent } from './validator/oauth-callback/oauth-callback.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MydialogComponent
+    MydialogComponent,
+    OauthCallbackComponent
   ],
   imports: [
     BrowserModule,

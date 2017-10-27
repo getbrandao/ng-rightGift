@@ -1,7 +1,7 @@
   <section class="section-login">
     <div class="login-form">
       <form id="login-form" [formGroup]="loginForm" (ngSubmit)="onSignIn()">
-      
+
         <div>
           <md-input-container class="login-form-input">
             <input mdInput placeholder="Email" formControlName="email" type="email">
@@ -10,7 +10,7 @@
             </md-error>
             <md-error *ngIf="loginForm.controls.email.hasError('required')">
               Email is <strong>required</strong>!
-            </md-error> 
+            </md-error>
           </md-input-container>
         </div>
 
@@ -18,11 +18,11 @@
           <md-input-container class="login-form-input">
             <input mdInput placeholder="Password" formControlName="password" type="password">
             <md-error *ngIf="loginForm.controls.password.hasError('minlength')">
-              Please password must it be 6 characters! 
+              Please password must it be 6 characters!
             </md-error>
             <md-error *ngIf="loginForm.controls.password.hasError('required')">
               Password is <strong>required</strong>!
-            </md-error> 
+            </md-error>
           </md-input-container>
         </div>
 
@@ -32,4 +32,14 @@
 
       </form>
     </div>
-  </section> 
+
+    <div class="container">
+
+      <button type="button" class="btn btn-default" (click)="onSignSocial()">
+        <!-- <i class="fa fa-facebook" aria-hidden="true"></i> -->
+        Facebook
+      </button>
+
+    </div>
+
+  </section>
